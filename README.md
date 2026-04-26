@@ -14,8 +14,8 @@ designed to grow in complexity as new concepts are learned.
 ## Project Structure
 src/
 └── main/java/com/verastegui/library/
-├── models/
-│   └── Book.java
+│   └── models/
+│       └── Book.java
 ├── services/
 │   └── LibraryService.java
 └── Main.java
