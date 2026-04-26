@@ -4,15 +4,15 @@ public class Book {
     private float price;
 
     public void setName(String name) {
-        name = this.name;
+        this.name = name;
     }
     
     public void setAuthor(String author) {
-        author = this.author;
+        this.author = author;
     }
 
     public void setPrice(float price) {
-        price = this.price;
+        this.price = price;
     }
 
     public String getName() {
@@ -29,6 +29,6 @@ public class Book {
     
     @Override
     public String toString() {
-        return "Book name: " + this.name + " - Author: " + this.author + " - price -> " + this.price;
+        return "Book name: " + this.name + " - Author: " + this.author + " - price -> " + this.price + "$";
     }
 }
