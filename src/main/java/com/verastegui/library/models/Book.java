@@ -1,3 +1,5 @@
+package com.verastegui.library.models;
+
 public class Book {
     private String name;
     private String author;

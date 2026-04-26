@@ -1,3 +1,6 @@
+package com.verastegui.library;
+import com.verastegui.library.models.Book;
+
 public class Main {
     public static void main(String[] args) {
         Book book1 = new Book();
