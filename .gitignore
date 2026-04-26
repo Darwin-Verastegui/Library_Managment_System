@@ -1,0 +1,15 @@
+#Copile Files
+*.class
+*.jar
+*.war
+
+#Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+
+#VSCode
+.vscode/
+
+#Logs
+*.log
