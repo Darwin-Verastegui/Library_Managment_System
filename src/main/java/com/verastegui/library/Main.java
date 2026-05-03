@@ -7,7 +7,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Book[] books = new Book[10];
-        Book book = new Book();
         int bkIndx = 0;
 
         while (true) { 
@@ -15,8 +14,9 @@ public class Main {
             String userAction = sc.nextLine();
 
             switch (userAction) {
-            
                 case "1":
+                    Book book = new Book();
+                    
                     System.out.println("Enter the book name: ");
                     String name = sc.nextLine();
                     book.setName(name);
@@ -30,21 +30,21 @@ public class Main {
                     sc.nextLine();
                     book.setPrice(price);
 
-                    for (int i = 0; i < books.length; i++) {
-                        if (books[bkIndx] == null) {
-                            books[bkIndx] = book;
-                            bkIndx++;
-                            break;
-                        }
+                    
+                    if (bkIndx < books.length) {
+                        books[bkIndx] = book;
+                        bkIndx += 1;
+                    } else {
+                        System.err.println("The library is full, you can't add more books.");
                     }
+                    
                     
                     break;
                 case "2":
-                    for (int i = 0; i < books.length; i++) {
-                        if (books[i] != null) {
-                            System.out.println(books[i].toString());
+                    for (Book bk : books) {
+                        if (bk != null) {
+                            System.out.println(bk.toString());
                         }
-
                     }
                     
                     break;
