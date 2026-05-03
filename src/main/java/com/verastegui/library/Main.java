@@ -8,6 +8,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Book[] books = new Book[10];
         Book book = new Book();
+        int bkIndx = 0;
 
         while (true) { 
             System.out.println("Plase choose an option: \n1. Add book \n2. Show books \n3. Exit");
@@ -30,8 +31,9 @@ public class Main {
                     book.setPrice(price);
 
                     for (int i = 0; i < books.length; i++) {
-                        if (books[i] == null) {
-                            books[i] = book;
+                        if (books[bkIndx] == null) {
+                            books[bkIndx] = book;
+                            bkIndx++;
                             break;
                         }
                     }
