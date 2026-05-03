@@ -1,6 +1,7 @@
 package com.verastegui.library;
 
 import java.util.Scanner;
+
 import com.verastegui.library.models.Book;
 
 public class Main {
@@ -27,7 +28,6 @@ public class Main {
 
                     System.out.println("Enter the book price: ");
                     float price = sc.nextFloat();
-                    sc.nextLine();
                     book.setPrice(price);
 
                     
