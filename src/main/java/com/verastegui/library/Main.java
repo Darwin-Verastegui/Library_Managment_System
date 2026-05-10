@@ -1,5 +1,6 @@
 package com.verastegui.library;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.verastegui.library.models.Book;
@@ -7,8 +8,7 @@ import com.verastegui.library.models.Book;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Book[] books = new Book[10];
-        int bkIndx = 0;
+        ArrayList<Book> books = new ArrayList<>();
 
         while (true) { 
             System.out.println("Plase choose an option: \n1. Add book \n2. Show books \n3. Exit");
@@ -29,16 +29,8 @@ public class Main {
                     System.out.println("Enter the book price: ");
                     float price = sc.nextFloat();
                     book.setPrice(price);
-
                     
-                    if (bkIndx < books.length) {
-                        books[bkIndx] = book;
-                        bkIndx += 1;
-                    } else {
-                        System.err.println("The library is full, you can't add more books.");
-                    }
-                    
-                    
+                    books.add(book);
                     break;
                 case "2":
                     for (Book bk : books) {
@@ -53,8 +45,7 @@ public class Main {
                     System.exit(0);
                 default:
                     System.err.println("Invalid option, please try again.");
-            }
-            
+            }    
         }
     }
 }
