@@ -16,21 +16,18 @@ public class Main {
 
             switch (userAction) {
                 case "1":
-                    Book book = new Book();
-                    
                     System.out.println("Enter the book name: ");
                     String name = sc.nextLine();
-                    book.setName(name);
 
                     System.out.println("Enter the book author: ");
                     String author = sc.nextLine();
-                    book.setAuthor(author);
 
                     System.out.println("Enter the book price: ");
                     float price = sc.nextFloat();
-                    book.setPrice(price);
                     
+                    Book book = new Book(name, author, price);
                     books.add(book);
+                    System.out.println("Book added successfully!");
                     break;
                 case "2":
                     for (Book bk : books) {
@@ -38,7 +35,7 @@ public class Main {
                             System.out.println(bk.toString());
                         }
                     }
-                    
+                    System.out.println("Books displayed successfully!");
                     break;
                 case "3":
                     sc.close();

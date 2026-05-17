@@ -1,20 +1,18 @@
 package com.verastegui.library.models;
 
+import java.time.LocalDate;
+
 public class Book {
     private String name;
     private String author;
     private float price;
+    private LocalDate addedDate;
 
-    public void setName(String name) {
+    public Book(String name, String author, float price) {
         this.name = name;
-    }
-    
-    public void setAuthor(String author) {
         this.author = author;
-    }
-
-    public void setPrice(float price) {
         this.price = price;
+        this.addedDate = LocalDate.now();
     }
 
     public String getName() {
@@ -28,9 +26,13 @@ public class Book {
     public float getPrice() {
         return this.price;
     }
+
+    public LocalDate getAddedDate() {
+        return this.addedDate;
+    }
     
     @Override
     public String toString() {
-        return "Book name: " + this.name + " - Author: " + this.author + " - price -> " + this.price + "$";
+        return "Book name: " + this.name + " - Author: " + this.author + " - price => " + this.price + "$" + " - added date: " + this.addedDate;
     }
 }
