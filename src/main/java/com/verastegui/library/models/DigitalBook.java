@@ -1,3 +1,5 @@
+package com.verastegui.library.models;
+
 public class DigitalBook extends Book {
     private String format;
 

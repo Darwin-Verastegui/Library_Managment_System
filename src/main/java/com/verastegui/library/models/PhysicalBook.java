@@ -1,3 +1,5 @@
+package com.verastegui.library.models;
+
 public class PhysicalBook extends Book {
     private String coverType;
 

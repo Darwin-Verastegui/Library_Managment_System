@@ -58,6 +58,7 @@ public class Main {
                         books.add(physicalBook);
 
                         System.out.println("Physical book added successfully!");
+                    }
                     break;
                 case "2":
                     for (Book bk : books) {
