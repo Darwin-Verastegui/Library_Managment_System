@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.verastegui.library.models.Book;
+import com.verastegui.library.models.DigitalBook;
+import com.verastegui.library.models.PhysicalBook;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,18 +18,46 @@ public class Main {
 
             switch (userAction) {
                 case "1":
-                    System.out.println("Enter the book name: ");
-                    String name = sc.nextLine();
+                    System.out.println("Is the book digital or physical? (d/p)");
+                    String bookType = sc.nextLine();
 
-                    System.out.println("Enter the book author: ");
-                    String author = sc.nextLine();
+                    if (bookType.equalsIgnoreCase("d")) {
+                        System.out.println("Enter the book name: ");
+                        String name = sc.nextLine();
 
-                    System.out.println("Enter the book price: ");
-                    float price = sc.nextFloat();
-                    
-                    Book book = new Book(name, author, price);
-                    books.add(book);
-                    System.out.println("Book added successfully!");
+                        System.out.println("Enter the book author: ");
+                        String author = sc.nextLine();
+
+                        System.out.println("Enter the book price: ");
+                        float price = sc.nextFloat();
+                        sc.nextLine();
+
+                        System.out.println("Enter the book format (e.g., PDF, EPUB): ");
+                        String format = sc.nextLine();
+
+                        Book digitalBook = new DigitalBook(name, author, price, format);
+                        books.add(digitalBook);
+
+                        System.out.println("Digital book added successfully!");
+                    } else if (bookType.equalsIgnoreCase("p")) {
+
+                        System.out.println("Enter the book name: ");
+                        String name = sc.nextLine();
+
+                        System.out.println("Enter the book author: ");
+                        String author = sc.nextLine();
+
+                        System.out.println("Enter the book price: ");
+                        float price = sc.nextFloat();
+                        sc.nextLine();
+
+                        System.out.println("Enter the book cover type (e.g., Hardcover, Paperback): ");
+                        String coverType = sc.nextLine();
+
+                        Book physicalBook = new PhysicalBook(name, author, price, coverType);
+                        books.add(physicalBook);
+
+                        System.out.println("Physical book added successfully!");
                     break;
                 case "2":
                     for (Book bk : books) {
